@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta dos Estados e Municípios | Agrosys</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* estilo geral */
+        body, html {
+            background-color: #002a34;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            background-image: url('https://files.bewezy.com/thumbs/1920/800/849f3916a152d21ec6fbf2caacff1c8a/b29b699383c6c44ae4f517b774b626d0/copia-de-copia-de-design-sem-nome-1024-x-575-px.jpg');
+            background-size: cover; /* ajusta o background pra ficar do tamanho da tela */
+            background-attachment: fixed; /* imagem fica fixa */
+            background-position: center; /* centraliza o background */
+        }
+
+        /* cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: #002a34;
+            color: white;
+        }
+
+        header .logo img {
+            width: 100px; 
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px; 
+            font-weight: 500;
+            font-size: 0.9rem; 
+        }
+
+        .call-button {
+            background-color: #0cd1ef;
+            color: white;
+            padding: 8px 16px; 
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem; 
+            font-weight: bold;
+        }
+
+        .call-button:hover {
+            background-color: #0ab0cc;
+        }
+
+        /*conteudo principal */
+        #ListaM {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            color: #002a34;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #ListaM h1, #ListaM h2 {
+            color: #0cd1ef;
+            margin-bottom: 15px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #0cd1ef;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        #municipiosLista ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        #municipiosLista li {
+            padding: 5px;
+            background-color: #f0f5ec;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            color: #344a3d;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .whatsapp-button i {
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
+        /* rodpé */
+        .footer {
+            background-color: #002a34;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #0cd1ef;
+        }
+
+        .footer-section p, .footer-section ul, .footer-section a {
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #0cd1ef;
+        }
+
+        .footer-section a:hover {
+            color: #0cd1ef;
+        }
+
+        .footer-section .social-icon {
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            font-size: 0.8rem;
+            color: #0cd1ef;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #backButton {
+                top: 100px;
+            }
+        }
+    </style>
+
+    <!-- font awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+</head>
+
+<body>
+    <!-- cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="Images/logoagrosys.png" alt="Logo Agrosys" onclick="window.location.href='Home.html'">
+        </div>
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="ConsultaDeEstados.html">Consulta De Estados</a>
+        </nav>
+        <button class="call-button" onclick="window.location.href='https://www.agrosys.com.br/contato'">Ligamos para você</button>
+    </header>
+
+    <!-- conteúdo principal -->
+    <div id="ListaM">
+        <h1>Escolha um Estado</h1>
+        <select id="estadoSelect">
+            <option value="">Carregando estados...</option>
+        </select>
+        
+        <h2>Municípios</h2>
+        <div id="municipiosLista">
+            <p>Selecione um estado para ver os municípios</p>
+        </div>
+    </div>
+
+    <!-- rodapé -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Sobre a Agrosys</h2>
+                <p>A Agrosys é líder em soluções tecnológicas para gestão no agronegócio, ajudando empresas a maximizar seus resultados.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Links Rápidos</h2>
+                <ul>
+                    <li><a href="ConsultaDeEstados.html">ConsultaDeEstados</a></li>
+                    <li><a href="Home.HTML">Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contato</h2>
+                <p><strong>Telefone:</strong> (48) 2101-2175</p>
+                <p><strong>Email:</strong> agrosys@agrosys.com.br</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Redes Sociais</h2>
+                <a href="#https://www.facebook.com/AgrosysTecnologia/?locale=pt_BR"><img src="Images/facebooklogo.png" alt="Facebook" class="social-icon"></a>
+                <a href="https://www.instagram.com/agrosystecnologia/"><img src="Images/instagramlogo.jpg" alt="Instagram" class="social-icon"></a>
+                <a href="https://www.linkedin.com/company/agrosystecnologia/?originalSubdomain=br"><img src="Images/linkedinlogo.png" alt="LinkedIn" class="social-icon"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Agrosys. Todos os direitos reservados.</p>
+        </div>
+        <button class="whatsapp-button" onclick="window.location.href='https://wa.me/554821012175?text=Olá%20Agrosys!%20Gostaria%20de%20mais%20informações.'">
+            <i class="fab fa-whatsapp"></i> Entre em contato
+        </button>
+    </footer>
+
+    <!-- script para carregar estados e municípios (ajax e jquery) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // carrega a lista de estados ao iniciar a página
+            $.ajax({
+                url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados",
+                method: "GET",
+                success: function (data) {
+                    data.sort(function(a, b) {
+                        return a.nome.localeCompare(b.nome);
+                    });
+
+                    let options = '<option value="">Selecione um estado</option>';
+                    $.each(data, function (index, estado) {
+                        options += `<option value="${estado.id}">${estado.nome}</option>`;
+                    });
+                    $("#estadoSelect").html(options);
+                },
+                error: function () {
+                    alert("Erro ao carregar a lista de estados.");
+                }
+            });
+
+            // carrega os municípios ao selecionar um estado
+            $('#estadoSelect').change(function () {
+                const estadoId = $(this).val();
+
+                if (estadoId) {
+                    $.ajax({
+                        url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}/municipios`,
+                        method: "GET",
+                        success: function (data) {
+                            data.sort(function(a, b) {
+                                return a.nome.localeCompare(b.nome);
+                            });
+
+                            let municipios = '<ul>';
+                            $.each(data, function (index, municipio) {
+                                municipios += `<li>${municipio.nome}</li>`;
+                            });
+                            municipios += '</ul>';
+                            $("#municipiosLista").html(municipios);
+                        },
+                        error: function () {
+                            alert("Erro ao carregar os municípios.");
+                        }
+                    });
+                } else {
+                    $("#municipiosLista").html('<p>Selecione um estado para ver os municípios</p>');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Passo a Passo:
+
+1-Abra a página "Home" do arquivo.
+
+2-Com a página "Home" aberta, todos os botões e links estarão funcionando corretamente.
+
+3-Clique na página de "Consulta de Estados", onde todos os Estados estarão listados em um campo de seleção (select).
+
+4-Selecione o Estado desejado e, automaticamente, serão exibidos os municípios correspondentes a esse Estado.
+
+
+Agradeço desde já pela oportunidade.
+Ass: Gabriel Nunes Vonsnievski

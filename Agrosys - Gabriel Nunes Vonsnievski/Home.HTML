@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrosys</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            background-color: #002a34;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 50px;
+            background-color: #002a34;
+            color: white;
+        }
+
+        .header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0cd1ef;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .call-button {
+            background-color: #0cd1ef;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://files.bewezy.com/thumbs/1920/800/849f3916a152d21ec6fbf2caacff1c8a/b29b699383c6c44ae4f517b774b626d0/copia-de-copia-de-design-sem-nome-1024-x-575-px.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .overlay {
+            background-color: rgba(0, 42, 52, 0.7);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero .highlight {
+            color: #0cd1ef;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .contact-button {
+            background-color: #0cd1ef;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Botão de WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .whatsapp-button i {
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #002a34;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #0cd1ef;
+        }
+
+        .footer-section p, .footer-section ul, .footer-section a {
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #0cd1ef;
+        }
+
+        .footer-section a:hover {
+            color: #0cd1ef;
+        }
+
+        .footer-section .social-icon {
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            font-size: 0.8rem;
+            color: #0cd1ef;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img onclick="window.location.href='Home.HTML'" src="Images/logoagrosys.png" alt="Logo Agrosys" style="height: 100px; width: 100px;">
+        </div>
+        <nav class="nav">
+            <a href="Home.html">Home</a>
+            <a href="ConsultaDeEstados.html">Consulta De Estados</a>
+        </nav>
+        <button class="call-button" onclick="window.location.href='https://www.agrosys.com.br/contato'">Ligamos para você</button>
+    </header>
+    <section class="hero">
+        <div class="overlay">
+            <h1>A maior empresa de <span class="highlight">tecnologia para gestão de agronegócio</span> é brasileira</h1>
+            <p>Maximize os resultados do seu negócio com soluções personalizadas feitas por especialistas</p>
+            <button class="contact-button">Fale com um especialista</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Sobre a Agrosys</h2>
+                <p>A Agrosys é líder em soluções tecnológicas para gestão no agronegócio, ajudando empresas a maximizar seus resultados.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Links Rápidos</h2>
+                <ul>
+                    <li><a href="ConsultaDeEstados.html">ConsultaDeEstados</a></li>
+                    <li><a href="Home.HTML">Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contato</h2>
+                <p><strong>Telefone:</strong> (48) 2101-2175</p>
+                <p><strong>Email:</strong> agrosys@agrosys.com.br</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Redes Sociais</h2>
+                <a href="#https://www.facebook.com/AgrosysTecnologia/?locale=pt_BR"><img src="Images/facebooklogo.png" alt="Facebook" class="social-icon"></a>
+                <a href="https://www.instagram.com/agrosystecnologia/"><img src="Images/instagramlogo.jpg" alt="Instagram" class="social-icon"></a>
+                <a href="https://www.linkedin.com/company/agrosystecnologia/?originalSubdomain=br"><img src="Images/linkedinlogo.png" alt="LinkedIn" class="social-icon"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Agrosys. Todos os direitos reservados.</p>
+        </div>
+        <button class="whatsapp-button" onclick="window.location.href='https://wa.me/554821012175?text=Olá%20Agrosys!%20Gostaria%20de%20mais%20informações.'">
+            <i class="fab fa-whatsapp"></i> Entre em contato
+        </button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
